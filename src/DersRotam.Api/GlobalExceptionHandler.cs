@@ -11,7 +11,7 @@ internal sealed class GlobalExceptionHandler(ILogger<GlobalExceptionHandler> log
 
         var problem = ApiProblemDetails.CreateInternalServerError(httpContext.TraceIdentifier);
 
-        httpContext.Response.StatusCode = problem.Status.Value;
+        httpContext.Response.StatusCode = StatusCodes.Status500InternalServerError;
         await httpContext.Response.WriteAsJsonAsync(problem, cancellationToken);
         return true;
     }
