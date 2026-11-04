@@ -21,7 +21,8 @@ dotnet run --project src/DersRotam.Api
 ```
 
 API `http://localhost:5000` veya konsolda bildirilen adreste başlar. `GET /health` sağlık
-durumunu döndürür. Development ortamında OpenAPI belgesi `/openapi/v1.json` adresindedir.
+durumunu döndürür. Development ortamında Swagger UI `/swagger`, OpenAPI belgesi
+`/swagger/v1/swagger.json` adresindedir.
 Beklenmeyen hatalar hassas ayrıntıları dışarı vermeyen ProblemDetails yanıtlarıyla sunulur.
 
 Ortam ayarlarını `appsettings.{Environment}.json`, environment variable veya .NET user secrets
