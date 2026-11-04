@@ -1,0 +1,17 @@
+name: Docs check
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required docs
+        run: |
+          test -f README.md
+          test -f AGENTS.md
+          test -f docs/PRD.md
+          test -f docs/ARCHITECTURE.md
+          test -f docs/INITIAL_BACKLOG.md
