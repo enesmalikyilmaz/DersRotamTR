@@ -9,6 +9,22 @@ AI destekli, dikkat dağıtmayan sınav hazırlık uygulaması. İlk hedef YKS; 
 - GitHub Actions
 - AI sağlayıcı soyutlaması; ilk adaptör OpenAI
 
+## Flutter mobil istemci
+
+Gereksinimler: Flutter stable SDK, Android Studio/Android SDK ve Android lisansları.
+
+```bash
+cd mobile
+flutter pub get
+flutter analyze
+flutter test
+flutter run --dart-define=APP_ENV=dev
+```
+
+Android release build'i için `flutter build apk --release --dart-define=APP_ENV=prod` komutunu kullanın. İstemci ortamı `APP_ENV` (`dev`/`prod`) ile seçilir; API temel URL'si `API_BASE_URL` dart-define üzerinden verilebilir. Değer yoksa güvenli varsayılanlar kullanılır; gizli anahtarlar istemciye eklenmemelidir.
+
+Flutter kaynakları `mobile/lib/features` altında feature-first düzenindedir. Bu başlangıç iskeleti henüz API çağrısı, auth veya onboarding iş mantığı içermez.
+
 ## Backend'i yerelde çalıştırma
 
 Gereksinim: .NET 8 SDK.
